@@ -1,14 +1,14 @@
 {
     "name": "InputVCR-Editor",
     "references": [
-        "GUID:dab65278143d24f128fdccc4cf61752a"
+        "InputVCR"
     ],
+    "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,
-    "defineConstraints": [],
-    "versionDefines": []
+    "defineConstraints": []
 }
