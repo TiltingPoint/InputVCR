@@ -358,11 +358,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5352d274212da42bc895a9f371a01eda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  recordButton: {fileID: 0}
-  playButton: {fileID: 0}
-  pauseButton: {fileID: 0}
-  rewindButton: {fileID: 0}
-  timeText: {fileID: 0}
+  recordButton: {fileID: 1968714629}
+  playButton: {fileID: 141714615}
+  pauseButton: {fileID: 275241081}
+  rewindButton: {fileID: 2093230660}
+  timeText: {fileID: 91943496}
   vcr: {fileID: 1869404003}
 --- !u!222 &174072921
 CanvasRenderer:
