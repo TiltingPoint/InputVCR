@@ -432,6 +432,11 @@ namespace InputVCR {
         public bool TryGetProperty( string propertyName, out string propertyValue ) {
             if ( thisFrameProperties.TryGetValue( propertyName, out Recording.FrameProperty frameProp ) ) {
                 propertyValue = frameProp.value;
+                
+                // After reading a property we do not need it anymore keeping it will provide fake info
+                // weather the property exist on the current frame
+                // this info gets refilled when loading/rewinding a recording
+                thisFrameProperties.Remove(propertyName);
                 return true;
             }
             else {
