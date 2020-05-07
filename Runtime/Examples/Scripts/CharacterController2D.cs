@@ -15,6 +15,12 @@ namespace InputVCRExamples {
         public float damping;
 
         Vector2 velocity;
+
+        private void Awake()
+        {
+            recorder = FindObjectOfType<InputVCRRecorder>();
+        }
+
         void Update() {
             // Get input from recorder
             // Note this only doesn't use InputManager Axes/Button names because your project might have changed the default settings
