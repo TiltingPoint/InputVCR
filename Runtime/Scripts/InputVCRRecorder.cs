@@ -38,15 +38,15 @@ namespace InputVCR {
         [Header( "Recorded Inputs" )]
         [Tooltip( "Button names (from Input manager) that should be recorded" )]
         [SerializeField]
-        List<string> _recordedButtons = new List<string>();
+        public List<string> _recordedButtons = new List<string>();
 
         [Tooltip( "Axis names (from Input manager) that should be recorded" )]
         [SerializeField]
-        List<string> _recordedAxes = new List<string>();
+        public List<string> _recordedAxes = new List<string>();
 
         [Tooltip( "Key buttons that should be recorded" )]
         [SerializeField]
-        List<KeyCode> _recordedKeys = new List<KeyCode>();
+        public List<KeyCode> _recordedKeys = new List<KeyCode>();
 
         [Tooltip( "Whether mouse position/button states should be recorded each frame (mouse axes are separate from this)" )]
         public bool recordMouseEvents;
@@ -142,6 +142,9 @@ namespace InputVCR {
         /// Start or resume playing back the current Recording, if present.
         /// </summary>
         public void Play() {
+            if(CurrentPlaybackTime >= CurrentRecording.Length )
+                return;
+            
             if ( Mode != InputVCRMode.Playback ) {
                 ClearInput(); // dont' clear if just resuming playback
                 Mode = InputVCRMode.Playback;
@@ -432,6 +435,11 @@ namespace InputVCR {
         public bool TryGetProperty( string propertyName, out string propertyValue ) {
             if ( thisFrameProperties.TryGetValue( propertyName, out Recording.FrameProperty frameProp ) ) {
                 propertyValue = frameProp.value;
+                
+                // After reading a property we do not need it anymore keeping it will provide fake info
+                // whether the property exist on the current frame
+                // this info gets refilled when loading/rewinding a recording
+                thisFrameProperties.Remove(propertyName);
                 return true;
             }
             else {
