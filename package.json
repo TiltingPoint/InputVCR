@@ -1,16 +1,23 @@
 {
-    "name": "com.eddiecameron.inputvcr",
+    "publishConfig": { "registry": "https://npm.pkg.github.com/@TiltingPoint" },
+    "name": "com.tiltingpoint.inputvcr",
     "version": "2.0.0",
     "displayName": "Input VCR",
-    "description": "Record and playback player actions without the fuss.",
+    "description": "Record and playback Player Actions. Based off https://github.com/EddieCameron/InputVCR, adapted for older versions of Unity",
+    "unity": "2018.4",
+    "unityRelease": "10f1",
    "keywords": [
       "Input",
       "Recording",
       "Playback"
     ],
     "author": {
-      "name": "Eddie Cameron",
-      "email": "eddie@eddiecameron.fun",
-      "url": "https://eddiecameron.fun"
+      "name": "Tilting Point Media LLC",
+      "email": "engineering@tiltingpoint.com",
+      "url": "https://github.com/TiltingPoint/InputVCR"
+    },
+    "repository":{
+      "type" : "git",
+      "url": "ssh://git@github.com/TiltingPoint/InputVCR.git"
     }
   }
