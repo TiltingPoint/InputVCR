@@ -22,6 +22,11 @@ namespace InputVCR {
         public bool syncRotation = true;
         public bool syncScale = true;
 
+        private void Awake()
+        {
+            recorderToSyncTo = FindObjectOfType<InputVCRRecorder>();
+        }
+        
         void Update() {
             if ( recorderToSyncTo == null )
                 return;
